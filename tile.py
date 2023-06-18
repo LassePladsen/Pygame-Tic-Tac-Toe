@@ -1,8 +1,4 @@
-import os
-
 import pygame as pg
-
-import settings
 
 
 class TileSprite(pg.sprite.Sprite):
@@ -16,7 +12,8 @@ class TileSprite(pg.sprite.Sprite):
                  anchor: str = "center"):
         pg.sprite.Sprite.__init__(self)
         self.description = description
-        image = pg.image.load(os.path.join(settings.DATA_DIR, image_file_name))
+        # image = pg.image.load(os.path.join(settings.DATA_DIR, image_file_name))
+        image = pg.image.load(image_file_name)
         size = image.get_size()
         new_size = (size[0] * scale[0], size[1] * scale[1])
         self.image = pg.transform.scale(image, new_size)

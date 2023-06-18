@@ -1,4 +1,3 @@
-import os
 import sys
 
 import pygame as pg
@@ -69,15 +68,14 @@ class TicTacToe:
             (1, 0), (1, 1), (1, 2),  # Row 2
             (2, 0), (2, 1), (2, 2),  # Row 3
         ]
+
     # TODO
     def check_winnable(self) -> bool:
         """Checks if there are no more legal moves."""
         pass
 
-
     def check_full_board(self) -> bool:
         """Checks if the board is completely full of sprites."""
-        print(len(self.sprite_descriptions))
         if len(self.sprite_descriptions) >= self.grid**2:
             return True
         return False
@@ -196,9 +194,9 @@ class TicTacToe:
         screen = pg.display.set_mode(self.window_size)
 
         # Background, icon,and title
-        background_image = pg.image.load(settings.os.path.join(settings.DATA_DIR, "background_grid.png"))
+        background_image = pg.image.load(settings.BACKGROUND_IMAGE)
         pg.display.set_caption(settings.WINDOW_TITLE)
-        pg.display.set_icon(pg.image.load(os.path.join(settings.DATA_DIR, "tic_tac_toe_icon.png")))
+        pg.display.set_icon(pg.image.load(settings.ICON_IMAGE))
 
         # Bottom text saying whose turn it is
         text_label = "   First turn:"

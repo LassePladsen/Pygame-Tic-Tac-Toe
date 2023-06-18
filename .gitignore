@@ -1,2 +1,8 @@
 data/old/
 venv/
+build/
+dist/
+.idea/
+__pycache__/
+TicTacToe.spec
+Tic

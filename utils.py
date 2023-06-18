@@ -33,6 +33,7 @@ def get_winner_text_objects(winner_string: str) -> tuple[pg.Surface, pg.Rect]:
     text_rect = text_surface.get_rect(topleft=settings.TEXT_POSITION)
     return text_surface, text_rect
 
+
 def get_game_over_text_objects() -> tuple[pg.Surface, pg.Rect]:
     """Returns pg.Surface and pg.Rect for the bottom text for when there is no more legal moves."""
     game_over_font = pg.font.SysFont(settings.FONT, settings.FONT_SIZE)
@@ -47,4 +48,3 @@ def get_reset_text_objects() -> tuple[pg.Surface, pg.Rect]:
     text_surface = reset_font.render("RESET", True, settings.RESET_FONT_COLOR)
     text_rect = text_surface.get_rect(center=settings.RESET_TEXT_POSITION)
     return text_surface, text_rect
-
