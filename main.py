@@ -257,7 +257,7 @@ class TicTacToe:
                 self.game_over = True
                 text_surface, text_rect = utils.get_winner_text_objects(winner)
                 game.set_turn_sprite(winner)
-            if game.check_full_board():
+            elif game.check_full_board():
                 self.game_over = True
                 text_surface, text_rect = utils.get_game_over_text_objects()
 
