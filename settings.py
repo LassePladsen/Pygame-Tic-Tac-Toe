@@ -44,6 +44,7 @@ FONT_BG_COLOR = "white"
 FONT_COLOR = "black"
 GAME_OVER_FONT_COLOR = "purple"
 TEXT_POSITION = 4, 315  # anchor topleft
+TEXT_WIDTH = 16
 
 # Bottom image sprite
 BOTTOM_SPRITE_SCALE = 0.5

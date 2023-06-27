@@ -5,4 +5,4 @@ dist/
 .idea/
 __pycache__/
 TicTacToe.spec
-Tic
+testing.py

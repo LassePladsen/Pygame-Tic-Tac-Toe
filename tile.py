@@ -5,13 +5,13 @@ class TileSprite(pg.sprite.Sprite):
     """Sprite class for the cross and circle tiles shown on the board."""
 
     def __init__(self,
-                 description: str,
+                 sprite_type: str,
                  image_file_name: str,
                  position: tuple[int, int],
                  scale: tuple[int | float, int | float] = (1, 1),
                  anchor: str = "center"):
         pg.sprite.Sprite.__init__(self)
-        self.description = description
+        self.type = sprite_type
         # image = pg.image.load(os.path.join(settings.DATA_DIR, image_file_name))
         image = pg.image.load(image_file_name)
         size = image.get_size()
