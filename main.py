@@ -6,13 +6,13 @@ import settings
 import utils
 from tile import TileSprite
 
-pg.init()
 
 
 class TicTacToe:
     """Class containing Tic Tac Toe game board and logic."""
 
     def __init__(self, board_size: tuple[int, int], grid: int) -> None:
+        pg.init()
         self.window_size = board_size
         self.grid = grid
         self.grid_size = int(board_size[0] / grid), int((board_size[1] - settings.SCREEN_HEIGHT_OFFSET) / grid)
@@ -286,8 +286,3 @@ class TicTacToe:
 if __name__ == "__main__":
     game = TicTacToe(board_size=(settings.SCREEN_WIDTH, settings.SCREEN_HEIGHT), grid=3)
     game.run()
-    # test = [(50,20), (150,150), (20, 250), (70, 150)]
-    # game.sprite_coords = test
-    # # print([game.get_grid_numbers(i) for i in test])
-    # result = game.get_winner()
-    # print(result)
