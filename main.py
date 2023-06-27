@@ -35,8 +35,6 @@ class TicTacToe:
 
     def get_winner(self) -> str | None:
         """Returns a winner if someone has won the board."""
-        if self.is_full_board():
-            return
         for combination in self.get_possible_win_combinations():
             cross_count = 0
             circle_count = 0
