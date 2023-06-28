@@ -15,11 +15,11 @@ class TicTacToe:
         self.window_size = board_size
         self.grid_division = grid_division
         self.grid_size = int(board_size[0] / grid_division), int(
-            (board_size[1] - settings.SCREEN_HEIGHT_OFFSET) / grid_division)
+                (board_size[1] - settings.SCREEN_HEIGHT_OFFSET) / grid_division)
         self.sprite_coords = []
         self.sprite_types = []
         self.sprite_group = pg.sprite.Group()
-        self.grid = [  # grid containing sprite string types on the screen
+        self.grid = [  # grid containing sprite type strings on the screen
             [None, None, None],  # row 1
             [None, None, None],  # row 2
             [None, None, None]   # row 3
@@ -31,6 +31,7 @@ class TicTacToe:
         self.sprite_types.append(sprite_type)
         self.sprite_coords.append(grid_coords)
         x, y = self.get_grid_indices(grid_coords)
+        # noinspection PyTypeChecker
         self.grid[x][y] = sprite_type
 
     def get_winner(self) -> str | None:
@@ -206,7 +207,7 @@ class TicTacToe:
                 del self.sprite_group.spritedict[key]
                 return
 
-    def set_turn_sprite(self, sprite_type: str) -> None:
+    def set_turn_sprite(self, sprite_type: str | None) -> None:
         """Changes the bottom sprite image to whoevers turn it is."""
         if len(game.sprite_types):  # not first sprite
             self.remove_previous_turn_sprite()
@@ -219,7 +220,6 @@ class TicTacToe:
                                           scale=(settings.BOTTOM_SPRITE_SCALE, settings.BOTTOM_SPRITE_SCALE))
             case _:
                 self.remove_previous_turn_sprite()
-
 
     def run(self):
         """Runs the Tic Tac Toe game loop."""
