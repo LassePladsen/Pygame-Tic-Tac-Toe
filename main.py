@@ -148,7 +148,7 @@ class TicTacToe:
                              image_name: str,
                              scale: tuple[int | float, int | float] = (1, 1),
                              anchor: str = "center") -> None:
-        """Adds a GameSprite object to the 'self.all_sprites' pg.sprite.Group."""
+        """Adds a GameSprite object to the 'self.sprite_group' pg.sprite.Group."""
         if sprite_type != "turn_sprite":  # this is a click on grid: a turn
             self.add_turn(sprite_type, position)
         # noinspection PyTypeChecker
@@ -164,7 +164,7 @@ class TicTacToe:
                             image_name: str,
                             scale: tuple[int | float, int | float] = (1, 1),
                             anchor: str = "center") -> int:
-        """Adds a GameSprite object to the 'self.all_sprites' pg.sprite.Group
+        """Adds a GameSprite object to the 'self.sprite_group' pg.sprite.Group
          if its inside the grid and the grid slot is empty.
          """
         try:
